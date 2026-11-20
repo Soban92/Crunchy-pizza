@@ -38,7 +38,7 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;height:6
 .links{display:flex;gap:26px;align-items:center}
 .links a{text-decoration:none;font-size:.95rem;color:var(--muted);transition:color .2s}
 .links a:hover{color:var(--ink)}
-.links .btn{padding:10px 22px;color:#1a0f00}
+.links .btn{color:#1a0f00}
 @media(max-width:860px){.links a:not(.btn){display:none}}
 
 /* HERO */
@@ -46,8 +46,8 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;height:6
 .hero::before,.hero::after{content:"";position:absolute;border-radius:50%;filter:blur(70px);z-index:-1}
 .hero::before{width:620px;height:620px;background:#e8590c;opacity:.35;top:-160px;right:-140px}
 .hero::after{width:460px;height:460px;background:#f5a31a;opacity:.18;bottom:-180px;left:-120px}
-.hero .wrap{display:grid;grid-template-columns:1.25fr .75fr;gap:56px;align-items:center}
-.hero h1{font-size:clamp(4.8rem,15vw,11.5rem);line-height:.9;color:var(--ink)}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(300px,.85fr);gap:48px;align-items:center}
+.hero h1{font-size:clamp(4.8rem,9.2vw,9rem);line-height:.9;color:var(--ink);overflow-wrap:anywhere}
 .hero h1 em{display:block;color:var(--rose-d);font-style:normal;margin-top:.04em}
 .hero .lead{font-size:1.2rem;margin:36px 0 44px;max-width:46ch}
 .cta-row{display:flex;gap:18px;flex-wrap:wrap;align-items:center}
@@ -98,9 +98,9 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;height:6
 
 .specials{background:var(--blush);border-radius:48px;margin:0 16px}
 .sp{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.sp .card{background:var(--bg);border-radius:200px 200px 28px 28px;padding:64px 28px 32px;text-align:center}
+.sp .card{background:var(--bg);border-radius:220px 220px 28px 28px;padding:84px 26px 34px;text-align:center}.sp h3{font-size:1.3rem;margin-bottom:8px}
 .sp .card:nth-child(2){background:var(--sage);color:#1a0f00}.sp .card:nth-child(2) h3{color:#1a0f00}.sp .card:nth-child(2) p{color:#4a3000}
-.sp .card:nth-child(3){background:var(--butter);color:#1a0800}.sp .card:nth-child(3) h3{color:#1a0800}.sp .card:nth-child(3) p{color:#3a1a08}
+.sp .card:nth-child(3){background:var(--butter);color:#1a0800}.sp .card:nth-child(3) h3{color:#1a0800}.sp .card:nth-child(3) p{color:#2a1004}
 .sp small{display:inline-block;margin-top:14px;font:400 1.5rem var(--serif)}
 @media(max-width:860px){.sp{grid-template-columns:1fr}.sp .card{border-radius:140px 140px 28px 28px}}
 
@@ -183,6 +183,18 @@ footer{text-align:left!important;padding:64px 0 110px!important}
 footer a{text-decoration:none;color:var(--ink)}footer a:hover{color:var(--rose-d)}
 .copy{text-align:center;margin-top:44px;font-size:.85rem}
 @media(max-width:860px){.fgrid{grid-template-columns:1fr 1fr}}@media(max-width:520px){.fgrid{grid-template-columns:1fr}}
+.vchip{background:var(--blush);border-radius:999px;padding:7px 13px;font-size:.85rem;white-space:nowrap}.vchip b{color:var(--rose-d)}
+.callgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;max-width:1120px;margin:0 auto;text-align:left}
+.callbtn{display:block;background:var(--surface);color:var(--ink);border-radius:24px;padding:22px 24px;text-decoration:none;font:400 1.4rem var(--serif);letter-spacing:.02em;white-space:nowrap;box-shadow:0 20px 40px -22px #000;transition:transform .25s,background .25s,color .25s}
+.callbtn:hover{transform:translateY(-4px);background:#fff4e0;color:#1a0f00}
+.callbtn small{display:block;font:700 .78rem var(--sans);text-transform:uppercase;letter-spacing:.1em;color:var(--rose-d);margin-bottom:4px}.callbtn:hover small{color:#a84300}
+.order .phones{margin-top:32px;font-weight:600}
+#mgrid{grid-template-columns:repeat(auto-fit,minmax(min(100%,330px),1fr))}
+.rows li{flex-wrap:wrap}.rows li>span:first-child{min-width:0}
+.links a:not(.btn){padding:12px 6px}.links .btn{padding:12px 24px}
+.logo{display:inline-block;padding:8px 0}
+.calls a{display:block;padding:7px 0}@media(max-width:600px){.calls a{padding:11px 0}}
+.order .callbtn{min-height:76px}
 /* dark-theme contrast fixes */
 .ob a.btn[aria-disabled="true"]{background:#3a2f26;color:#8a7a68;box-shadow:none;animation:none;pointer-events:none}
 .ob .btn.ghost{color:var(--ink);background:transparent;border:1.5px solid var(--line);text-transform:none;font:600 1rem var(--sans);letter-spacing:0;padding:14px}.ob .btn.ghost:hover{background:var(--ink);color:var(--bg)}.ob .btn.ghost:disabled{opacity:.4}
@@ -214,7 +226,7 @@ footer a{text-decoration:none;color:var(--ink)}footer a:hover{color:var(--rose-d
   summary{font-size:1.15rem}
   .facts{gap:20px}.facts b{font-size:1.4rem}
 }
-@media(max-width:360px){.logo{font-size:1.25rem}.links .btn{padding:9px 16px;font-size:.9rem}.wrap{padding:0 16px}}
+@media(max-width:360px){.logo{font-size:1.25rem}.links .btn{padding:12px 16px;font-size:.9rem}.wrap{padding:0 16px}}
 footer{padding:40px 0 56px;text-align:center;color:var(--muted);font-size:.92rem}
 @media(max-width:600px){section{padding:76px 0}.wrap{padding:0 20px}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.rise>*{opacity:1;transform:none}html{scroll-behavior:auto}}
@@ -250,9 +262,9 @@ footer{padding:40px 0 56px;text-align:center;color:var(--muted);font-size:.92rem
 <section class="specials" id="specials"><div class="wrap">
   <div class="head"><h2>Signature specials</h2><p class="lead">The showstoppers you will only find at Crunchy Pizza.</p></div>
   <div class="sp">
-    <div class="card"><h3>Train Pizza</h3><p>A long, shareable pizza with 3 flavours, 3 dips and a 2.25 L cold drink.</p><small>Rs 3,999</small><br><button class="add" type="button" data-c="Specials and signature food" data-n="Train Pizza">Add to order</button></div>
-    <div class="card"><h3>Special Square Family</h3><p>A square family pizza drizzled with creamy sauce, with a 1.5 L cold drink.</p><small>Rs 2,449</small><br><button class="add" type="button" data-c="Specials and signature food" data-n="Special Square Family + 1.5 L drink">Add to order</button></div>
-    <div class="card"><h3>Full Injected Broast</h3><p>8 pieces of chicken, fries, 4 buns and 4 dips.</p><small>Rs 2,599</small><br><button class="add" type="button" data-c="Broast" data-n="Full Broast">Add to order</button></div>
+    <div class="card"><h3>Train Pizza</h3><p>A long, shareable pizza with 3 flavours, 3 dips and a 2.25 L cold drink.</p><small>Rs 3,999</small></div>
+    <div class="card"><h3>Special Square Family</h3><p>A square family pizza drizzled with creamy sauce, with a 1.5 L cold drink.</p><small>Rs 2,449</small></div>
+    <div class="card"><h3>Full Injected Broast</h3><p>8 pieces of chicken, fries, 4 buns and 4 dips.</p><small>Rs 2,599</small></div>
   </div>
 </div></section>
 
@@ -307,45 +319,29 @@ footer{padding:40px 0 56px;text-align:center;color:var(--muted);font-size:.92rem
   <div class="head"><h2>Questions, answered</h2></div>
   <details><summary>What are your opening hours?</summary><p>We are open every day from 10 AM to 3 AM.</p></details>
   <details><summary>Do you deliver?</summary><p>Yes. We offer delivery, take away and dine in. Call us to confirm delivery to your area.</p></details>
-  <details><summary>How do I place an order?</summary><p>Choose your items below and send them to us on WhatsApp, or call one of the numbers in the order section.</p></details>
+  <details><summary>How do I place an order?</summary><p>Call any of the numbers in the order section and tell us what you would like.</p></details>
   <details><summary>Can I add extra toppings or cheese?</summary><p>Yes. Extra toppings start at Rs 100 and a cheese slice is Rs 100.</p></details>
   <details><summary>What crusts do you offer?</summary><p>Stuffed, cheese, star, extreme, crown and Behari Kabab crust, in medium, large and family sizes.</p></details>
 </div></section>
 
 <section class="order" id="order"><div class="wrap">
-  <h2>Hungry? Build your order.</h2>
-  <p class="lead">Add as many items as you like, then send the whole order on WhatsApp.</p>
-  <div class="ob">
-    <div class="pn">
-      <h3>Add items</h3>
-      <label for="cat">Category</label><select id="cat"></select>
-      <label for="item">Item</label><select id="item"></select>
-      <div id="flv" hidden><label for="flavour">Flavour</label><select id="flavour"></select></div>
-      <label>Quantity</label>
-      <div class="qty"><button class="qb" id="qm" type="button" aria-label="Less">−</button><b id="qv">1</b><button class="qb" id="qp" type="button" aria-label="More">+</button></div>
-      <button class="btn big" id="add" type="button">Add to order</button>
-    </div>
-    <div class="pn">
-      <h3>Your order</h3>
-      <ul id="cart" aria-live="polite"></ul>
-      <div class="tot"><span>Total</span><b id="total">Rs 0</b></div>
-      <input id="nm" aria-label="Your name" placeholder="Your name (required)" autocomplete="name">
-      <input id="ad" aria-label="Delivery address or order type" placeholder="Address, or Take away / Dine in (required)" autocomplete="street-address">
-      <a class="btn big" id="go" href="#order" target="_blank" rel="noopener noreferrer" aria-disabled="true">Send order on WhatsApp</a>
-      <button class="btn ghost" id="copy" type="button" disabled>Copy order text</button>
-      <p class="hint">Add items, then enter your name and address to send. If WhatsApp does not open, tap Copy order text and send it to 0322-1699267.</p>
-    </div>
+  <h2>Hungry? Call to order.</h2>
+  <p class="lead">Tell us what you would like and we will get it ready. Dine in, take away or delivery, daily from 10 AM to 3 AM.</p>
+  <div class="callgrid">
+    <a class="callbtn" href="tel:0404222105"><small>Landline</small>040-4222105-106</a>
+    <a class="callbtn" href="tel:03054464786"><small>Mobile</small>0305-4464786</a>
+    <a class="callbtn" href="tel:03062222954"><small>Mobile</small>0306-2222954</a>
+    <a class="callbtn" href="tel:03222222955"><small>Mobile</small>0322-2222955</a>
   </div>
-  <p class="phones">Prefer to call? <a href="tel:03221699267">0322-1699267</a></p>
+  <p class="phones">Al Munir Petroleum, PSO Pump, Kutchery Road, near Jinnah Hall, Sahiwal</p>
 </div></section>
 <footer><div class="wrap fgrid">
   <div><b>Crunchy Pizza</b>Fresh · Hot · Delicious<br>Pizza, burgers, pasta and wraps</div>
   <div><b>Hours</b>Daily, 10 AM to 3 AM<br>Dine in · Take away · Delivery</div>
   <div><b>Visit us</b>Al Munir Petroleum, PSO Pump, Kutchery Road, near Jinnah Hall, Sahiwal</div>
-  <div><b>Call</b><a href="tel:03221699267">0322-1699267</a></div>
+  <div class="calls"><b>Call</b><a href="tel:0404222105">040-4222105-106</a><a href="tel:03054464786">0305-4464786</a><a href="tel:03062222954">0306-2222954</a><a href="tel:03222222955">0322-2222955</a></div>
 </div><p class="copy">© 2026 Crunchy Pizza</p></footer>
-<div class="toast" id="toast" role="status" aria-live="polite"></div>
-<div class="dock" id="dock"><a class="dk call" href="tel:03221699267">Call</a><a class="dk ord" href="#order" id="dkTxt">Order now</a></div>
+<div class="dock" id="dock"><a class="dk call" href="tel:03054464786">Call us</a><a class="dk ord" href="#order">Order now</a></div>
 
 <script>
 const W="Wings, nuggets and fries";
@@ -379,78 +375,21 @@ function tabs(el,keys,fn,panelId){
   sel(0);
 }
 const row=(g,x)=>{const [n,p,d]=x;
-  if(Array.isArray(p))return `<li><span>${n}</span><span class="vs">${p.map(v=>`<button type="button" class="add v" data-c="${g.c}" data-n="${n}, ${v[0]}" aria-label="Add ${n}, ${v[0]}">${cap(v[0])} <b>${f(v[1])}</b></button>`).join("")}</span></li>`;
-  return `<li><span>${n}${d?`<small>${d}</small>`:""}</span><span class="pr">${f(p)}<button type="button" class="add" data-c="${g.c}" data-n="${n}" aria-label="Add ${n} to order">+</button></span></li>`};
+  if(Array.isArray(p))return `<li><span>${n}</span><span class="vs">${p.map(v=>`<span class="vchip">${cap(v[0])} <b>${f(v[1])}</b></span>`).join("")}</span></li>`;
+  return `<li><span>${n}${d?`<small>${d}</small>`:""}</span><span class="pr">${f(p)}</span></li>`};
 tabs(document.getElementById("mtabs"),Object.keys(MENU),k=>{
   document.getElementById("mgrid").innerHTML=MENU[k].map((g,i)=>`<article class="card" style="animation-delay:${i*60}ms"><h3>${g.t}</h3>`
-   +(g.chips?`<div class="chips">${g.chips.map(c=>`<span class="chip">${c}</span>`).join("")}</div><div class="sizes">${g.sizes.map(s=>`<button type="button" data-c="Pizzas" data-n="${g.pre} pizza, ${s[0]}" aria-label="Order ${g.t}, ${s[0]}, Rs ${s[1]}">${s[0]}<b>${rs(s[1])}</b></button>`).join("")}</div><p class="hint">Tap a size to start your order.</p>`:"")
+   +(g.chips?`<div class="chips">${g.chips.map(c=>`<span class="chip">${c}</span>`).join("")}</div><div class="sizes">${g.sizes.map(s=>`<div>${s[0]}<b>${rs(s[1])}</b></div>`).join("")}</div>`:"")
    +(g.items?`<ul class="rows">${g.items.map(x=>row(g,x)).join("")}</ul>`:"")+`</article>`).join("");
 },"mgrid");
 tabs(document.getElementById("dtabs"),Object.keys(DEALS),k=>{
   const L=k.replace(" deals","");
-  document.getElementById("dgrid").innerHTML=DEALS[k].map((d,i)=>`<article class="card deal" style="animation-delay:${i*40}ms"><span class="n">${L} deal ${d[0]}</span><p>${d[2]}</p><div class="dfoot"><span class="p">${f(d[1])}</span><button type="button" class="add" data-c="${k}" data-n="${L} deal ${d[0]}" aria-label="Add ${L} deal ${d[0]} to order">Add</button></div></article>`).join("");
+  document.getElementById("dgrid").innerHTML=DEALS[k].map((d,i)=>`<article class="card deal" style="animation-delay:${i*40}ms"><span class="n">${L} deal ${d[0]}</span><p>${d[2]}</p><div class="dfoot"><span class="p">${f(d[1])}</span></div></article>`).join("");
 },"dgrid");
-const mk=a=>a.map(([n,p])=>({n,p}));
-const dl=k=>DEALS[k].map(d=>({n:`${k.replace(" deals","")} deal ${d[0]}`,s:d[2],p:d[1]}));
-const pz=(g,i,pre)=>MENU.Pizza[i].sizes.map(s=>({n:`${pre} pizza, ${s[0]}`,p:s[1],fl:MENU.Pizza[i].chips}));
-const CAT={
-"Pizza deals":dl("Pizza deals"),"Burger deals":dl("Burger deals"),"Family deals":dl("Family deals"),
-"Pizzas":[...pz(0,0,"Classic"),...pz(0,1,"Signature"),...pz(0,2,"Premium crust")],
-"Burgers":mk(MENU.Burgers[0].items),"Wraps and rolls":mk(MENU["Wraps and rolls"][0].items),
-"Wings, nuggets and fries":mk([["Hot Wings, 5 pcs",300],["Hot Wings, 10 pcs",650],["Grilled Wings, 5 pcs",400],["Grilled Wings, 10 pcs",699],["Chicken Nuggets, 5 pcs",320],["Chicken Nuggets, 10 pcs",580],["French Fries, regular",200],["French Fries, family",350],["Loaded Fries",750],["Pizza Fries",700],["BBQ Fries",650]]),
-"Broast":MENU.Broast[0].items.map(x=>({n:x[0],s:x[2],p:x[1]})),
-"Pasta":mk([["Creamy Pasta, half",469],["Creamy Pasta, full",699],["Crunchy Pasta, half",549],["Crunchy Pasta, full",749]]),
-"Specials and signature food":mk([["Train Pizza",3999],["Special Square Family + 1.5 L drink",2449],["Pan Sandwich",650],["Pizza Paratha",650],["Behari Roll",650]]),
-"Cold drinks":mk(MENU["Pasta and drinks"][1].items),
-"Extras":mk([["Extra topping, small",100],["Extra topping, medium",150],["Extra topping, large",200],["Extra topping, family",300],["Cheese slice",100],["Special dip",80]])
-};
-const $=id=>document.getElementById(id),cat=$("cat"),item=$("item"),fl=$("flavour");
-let cart=[],qty=1;
-Object.keys(CAT).forEach(k=>cat.add(new Option(k,k)));
-function fillItems(){
-  item.innerHTML="";CAT[cat.value].forEach((x,i)=>item.add(new Option(x.n+" · "+f(x.p),i)));fillFl();
-}
-function fillFl(){
-  const x=CAT[cat.value][item.value];$("flv").hidden=!x.fl;fl.innerHTML="";
-  if(x.fl)x.fl.forEach(c=>fl.add(new Option(c,c)));
-}
-cat.onchange=fillItems;item.onchange=fillFl;fillItems();
-$("qm").onclick=()=>{qty=Math.max(1,qty-1);$("qv").textContent=qty};
-$("qp").onclick=()=>{qty=Math.min(20,qty+1);$("qv").textContent=qty};
-function draw(){
-  $("cart").innerHTML=cart.length?cart.map((c,i)=>`<li><span class="nm">${c.n}${c.fl?`<small>${c.fl}</small>`:c.s?`<small>${c.s}</small>`:""}</span><button class="qb" data-i="${i}" data-d="-1" aria-label="Remove one">−</button><b>${c.q}</b><button class="qb" data-i="${i}" data-d="1" aria-label="Add one">+</button><span class="pr">${f(c.p*c.q)}</span></li>`).join(""):'<li class="empty">Nothing here yet. Add your first item.</li>';
-  $("total").textContent=f(cart.reduce((s,c)=>s+c.p*c.q,0));syncWA();updateDock();
-}
-$("cart").onclick=e=>{const b=e.target.closest("button");if(!b)return;const c=cart[b.dataset.i];c.q+=+b.dataset.d;if(c.q<1)cart.splice(b.dataset.i,1);draw()};
-$("add").onclick=()=>{
-  const x=CAT[cat.value][item.value],v=x.fl?fl.value:"";
-  const k=x.n+"|"+v,ex=cart.find(c=>c.k===k);
-  if(ex)ex.q=Math.min(50,ex.q+qty);else cart.push({k,n:x.n,s:x.s,p:x.p,q:qty,fl:v});
-  qty=1;$("qv").textContent=1;draw();
-};
-function waMsg(){const lines=cart.map(c=>`${c.q} x ${c.n}${c.fl?" ("+c.fl+")":""} = ${f(c.p*c.q)}`);
-  return `Hi Crunchy Pizza, I would like to order:\n${lines.join("\n")}\nTotal: ${$("total").textContent}`+($("nm").value?`\nName: ${$("nm").value}`:"")+($("ad").value?`\nAddress / type: ${$("ad").value}`:"")}
-function syncWA(){const on=cart.length>0&&$("nm").value.trim()!==""&&$("ad").value.trim()!=="",g=$("go");g.setAttribute("aria-disabled",!on);g.href=on?"https://wa.me/923221699267?text="+encodeURIComponent(waMsg()):"#order";$("copy").disabled=!on}
-$("go").addEventListener("click",e=>{if($("go").getAttribute("aria-disabled")==="true")e.preventDefault()});
-["nm","ad"].forEach(id=>$(id).addEventListener("input",syncWA));
-$("copy").onclick=()=>{const m=waMsg(),ok=()=>toast("Order copied. Paste it into WhatsApp");
-  const fb=()=>{const a=document.createElement("textarea");a.value=m;a.style.cssText="position:fixed;opacity:0";document.body.appendChild(a);a.select();try{document.execCommand("copy");ok()}catch(_){toast("Could not copy. Please type your order in WhatsApp")}a.remove()};
-  navigator.clipboard&&navigator.clipboard.writeText?navigator.clipboard.writeText(m).then(ok,fb):fb()};
-let orderVis=false,tt;
-function toast(m){const e=$("toast");e.textContent=m;e.classList.add("on");clearTimeout(tt);tt=setTimeout(()=>e.classList.remove("on"),2200)}
-function put(x,v,q){const k=x.n+"|"+v,ex=cart.find(c=>c.k===k);if(ex)ex.q=Math.min(50,ex.q+q);else cart.push({k,n:x.n,s:x.s,p:x.p,q,fl:v});draw()}
-function pickOrder(c,n){cat.value=c;fillItems();const i=CAT[c].findIndex(x=>x.n===n);if(i>-1){item.value=i;fillFl()}
-  $("order").scrollIntoView({behavior:"smooth"});toast("Choose a flavour, then tap Add to order")}
-document.addEventListener("click",e=>{const b=e.target.closest("[data-c][data-n]");if(!b)return;
-  const x=CAT[b.dataset.c]&&CAT[b.dataset.c].find(y=>y.n===b.dataset.n);if(!x)return;
-  if(x.fl)return pickOrder(b.dataset.c,x.n);
-  put(x,"",1);toast("Added: "+x.n)});
-function updateDock(){const n=cart.reduce((s,c)=>s+c.q,0),tot=cart.reduce((s,c)=>s+c.p*c.q,0);
-  $("dkTxt").textContent=n?`View order (${n}) · ${f(tot)}`:"Order now";
-  $("dock").classList.toggle("on",scrollY>innerHeight*.6&&!orderVis)}
+const $=id=>document.getElementById(id);let orderVis=false;
+function updateDock(){$("dock").classList.toggle("on",scrollY>innerHeight*.6&&!orderVis)}
 new IntersectionObserver(e=>{orderVis=e[0].isIntersecting;updateDock()},{threshold:.1}).observe($("order"));
-addEventListener("scroll",updateDock,{passive:true});
-draw();
+addEventListener("scroll",updateDock,{passive:true});updateDock();
 </script>
 </body>
 </html>

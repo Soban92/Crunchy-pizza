@@ -4,7 +4,7 @@ One-page website for Crunchy Pizza, Sahiwal. Single self-contained `index.html` 
 
 ## Features
 - Hero, full menu (tabs), combo deals, signature specials, delivery, service areas, testimonials, pricing, FAQ
-- Multi-item order builder that sends the order to WhatsApp (0322-1699267)
+- Order / contact section with tap-to-call buttons for the four shop numbers
 - Black and amber theme taken from the printed menu, responsive for desktop and mobile
 
 ## Run locally
@@ -18,8 +18,7 @@ Open `index.html` in a browser, or serve the folder:
 
 ## Editing content
 - Menu items and prices: the `MENU` and `DEALS` objects in the `<script>` at the bottom of `index.html`
-- Order catalogue (`CAT`) is built from the same data
-- Phone / WhatsApp number: search for `03221699267` and `923221699267`
+- Phone numbers: search for `tel:` in `index.html` (order section, footer and the floating bar)
 
 ## To do
 - Replace placeholder testimonials, FAQ answers and service area names with real ones

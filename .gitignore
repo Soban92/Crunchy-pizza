@@ -1,0 +1,30 @@
+# Secrets and environment files
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+id_rsa*
+secrets.*
+credentials.*
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editors and tools
+.vscode/
+.idea/
+*.swp
+*~
+.claude/settings.local.json
+
+# Dependencies, builds and logs
+node_modules/
+dist/
+build/
+.cache/
+*.log
+npm-debug.log*
